@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+    <head> <!-- ページのヘッダー情報(ページ上に表示されない) -->
+        <title>紺留留亜のなんでも屋さん</title> <!-- サイトのタイトル -->
+        <link rel="stylesheet" href="./00_uni.css"> <!-- CSSファイルの読み込み -->
+        <link rel="stylesheet" href="./03_portfolio.css"> <!-- CSSファイルの読み込み -->
+
+        <h1>紺留留亜のなんでも屋さん</h1>   <!-- 大見出し -->
+        <nav>
+            <a href="./01_top.html">トップ</a>
+            <a href="./02_profile.html">プロフィール</a>
+            <a href="./03_portfolio.html">ポートフォリオ</a>
+            <a href="./04_guide.html">楽曲使用ガイドライン</a>
+            <a href="./05_contact.html">お問い合わせ</a>
+        </nav>
+    </head>
+
+    <body>
+        <div class="portfolio">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="col-date">年月<br><input type="text" id="filterYearMonth" placeholder="検索"></th>
+                        <th class="col-job">お仕事か
+                            <select id="filterJob">
+                                <option value="all">すべて</option>
+                                <option value="お仕事">お仕事</option>
+                                <option value="お仕事じゃない">お仕事じゃない</option>
+                            </select>
+                        </th>
+                        <th class="col-tag">主軸
+                            <select id="filterTag">
+                                <option value="all">すべて</option>
+                                <option value="楽曲">楽曲</option>
+                                <option value="演劇">演劇</option>
+
+                            </select>
+                        </th>
+                        <th class="col-activity">活動<br><input type="text" id="filterActivity" placeholder="検索"></th>
+                        <th class="col-video">関連動画</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2023/11</td>
+                        <td>お仕事じゃない</td>
+                        <td>楽曲</td>
+                        <td>TOBIRAPOLIS祭2023 あ〜愉楽愉楽！秋のオデッセイクエスト〜夢を添えて〜<br>
+                            ワールドBGM『Dive into TOBIRAPOLIS!!!』『Dive into TOBIRAPOLIS!!! Jazz ver.』『Fey's Echo of Ethereal Ruins』楽曲提供</td>
+                        <td>
+                            <iframe src="https://www.youtube.com/embed/eBBBlmaDP2c" title="【TOBIRAPOLIS非公式イメソン】Dive into TOBIRAPOLIS!!!/紺留留亜 (Konto Lua)【UTAUオリジナル曲】" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
+                            <iframe src="https://www.youtube.com/embed/xbfBEYRFUwk" title="【TOBIRAPOLIS非公式イメソン】Dive into TOBIRAPOLIS!!! Jazz Ver./紺留留亜 (Konto Lua)【セルフアレンジ】" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
+                            <iframe src="https://www.youtube.com/embed/pPGW2oQLdLc" title="【オリジナル曲】Fey&#39;s Echo of Ethereal Ruins/紺留留亜 (Konto Lua)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen> 
+                            </iframe>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2024/06</td>
+                        <td>お仕事じゃない</td>
+                        <td>楽曲</td>
+                        <td>TOBIRA MUSIC FESTIVAL2024 ～音楽のトビラを開く場所～<br>
+                            ワールドBGM『Hyped Beat Blast』楽曲提供</td>
+                        <td>
+                            <iframe src="https://www.youtube.com/embed/stY_TKZGok0" title="【オリジナル曲】Hyped Beat Blast/紺留留亜 (Konto Lua)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2024/07</td>
+                        <td>お仕事じゃない</td>
+                        <td>楽曲</td>
+                        <td>TOBIRA MUSIC FESTIVAL2024 ～音楽のトビラを開く場所～ ダイジェスト映像<br>
+                            動画用楽曲『Reflection of Vibes』楽曲提供</td>
+                        <td>
+                            <iframe src="https://www.youtube.com/embed/jOe_g1SpfuA" title="TOBIRA MUSIC FESTIVAL2024 ダイジェスト映像" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2024/08</td>
+                        <td>お仕事じゃない</td>
+                        <td>楽曲</td>
+                        <td>とびらぽりす花火大会2024 ～夏だ！　花火だ！　納涼だ！～<br>
+                            クライマックスセトリ楽曲『煌火花』楽曲提供<br>
+                            TOBIRAPOLISメンバー歌唱一部調整</td>
+                        <td>
+                            <iframe src="https://www.youtube.com/embed/UISPgKuwxs4" title="【UTAUオリジナル曲】煌火花/紺留留亜 (Konto Lua)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2024/11</td>
+                        <td>お仕事じゃない</td>
+                        <td>演劇</td>
+                        <td>劇団「羽」2024年度冬公演『天使。』 告知PV<br>
+                            動画作成<br>
+                            動画用楽曲『To Be Angel』『Heavy Heartbeat』『Another Future』楽曲提供</td>
+                        <td>
+                            <iframe src="https://www.youtube.com/embed/_3tXvwssulc" title="劇団「羽」2024年度冬公演「天使。」　告知PV第一弾" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2024/11</td>
+                        <td>お仕事</td>
+                        <td>楽曲</td>
+                        <td>Revereel Studio『Dream Land』<br>
+                            テーマ曲『THE ZANY’S CIRCUS -opening-』楽曲提供</td>
+                        <td>
+                            <iframe src="https://www.youtube.com/embed/tfeyT7RsVOo" title="If You Stay Up Late... | Animated Short Film &quot;Dream Land&quot;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2024/11</td>
+                        <td>お仕事</td>
+                        <td>楽曲</td>
+                        <td>ダイビングスクール ソットマリノ様 ツアー動画<br>
+                            動画用楽曲『Ocean Quest』楽曲提供</td>
+                        <td>
+                            <iframe src="https://www.youtube.com/embed/t1-7Vd_eJlo?list=PLHlUj_t7OWgNHqF9NOMI0vtCLqzdtRyGC" title="ソットマリノ　夏の沖縄　伊江島ツアー2024" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://www.youtube.com/@KontoLuaApple/featured" target="_blank">
+                <img src="./img/01_YouTube.png" alt="YouTube" />
+            </a>
+            <a href="https://x.com/KontoLuaApple" target="_blank">
+                <img src="./img/01_Twitter.png" alt="X (Twitter)" />
+            </a>
+            <a href="https://kontoluaapple.booth.pm/" target="_blank">
+                <img src="./img/01_BOOTH.svg" alt="BOOTH" />
+            </a>
+            <a href="https://store.vket.com/ja/shops/3250" target="_blank">
+                <img src="./img/01_VketStore.svg" alt="VketStore" />
+            </a>
+        </div>
+    </footer>
+</html>
+
+<script>
+    document.querySelectorAll('thead select, thead input').forEach((filterElement, index) => {
+        filterElement.addEventListener('input', function () {
+            const rows = document.querySelectorAll('tbody tr'); // テーブルのすべての行を取得
+
+            rows.forEach(row => {
+                let shouldShow = true; // 行を表示するかどうか
+
+                // 年月（テキスト検索）
+                const yearMonthFilter = document.getElementById('filterYearMonth').value.toLowerCase();
+                const yearMonthCell = row.querySelectorAll('td')[0];
+                if (yearMonthFilter && yearMonthCell && !yearMonthCell.textContent.toLowerCase().includes(yearMonthFilter)) {
+                        shouldShow = false;
+                }
+
+                // お仕事か（ドロップダウン）
+                const jobFilter = document.getElementById('filterJob').value;
+                const jobCell = row.querySelectorAll('td')[1];
+                if (jobFilter !== 'all' && jobCell && jobCell.textContent.trim() !== jobFilter) {
+                    shouldShow = false;
+                }
+
+               // 主軸（ドロップダウン）
+                const tagFilter = document.getElementById('filterTag').value;
+               const tagCell = row.querySelectorAll('td')[2];
+               if (tagFilter !== 'all' && tagCell && tagCell.textContent.trim() !== tagFilter) {
+                    shouldShow = false;
+                }
+
+               // 活動（テキスト検索）
+                const activityFilter = document.getElementById('filterActivity').value.toLowerCase();
+                const activityCell = row.querySelectorAll('td')[3];
+                if (activityFilter && activityCell && !activityCell.textContent.toLowerCase().includes(activityFilter)) {
+                    shouldShow = false;
+                }
+
+                // 行を表示または非表示
+                row.style.display = shouldShow ? '' : 'none';
+            });
+        });
+    });
+</script>

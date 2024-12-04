@@ -1,0 +1,48 @@
+.portfolio {
+    display: flex;
+    justify-content: center;    /* 中央揃え */
+}
+
+.portfolio table {
+    width: 80%;                /* テーブルを80%広げる */
+    border-collapse: collapse; /* ボーダーの重なりをなくす */
+    margin: 20px 0;            /* 上下の余白を追加 */
+    font-size: 1em;            /* フォントサイズ */
+}
+
+.portfolio th, .portfolio td {
+    border: 1px solid #ffffff; /* セルの枠線 */
+    padding: 10px;             /* セルの内側の余白 */
+    text-align: left;          /* テキストを左揃え */
+    color: #ffffff;            /* 文字色を白 */
+}
+
+.portfolio th {
+    background-color: #1c305c; /* ヘッダーの背景色 */
+    font-weight: bold;         /* ヘッダーを太字に */
+}
+
+.portfolio tr:nth-child(even) {
+    background-color: #2a4474; /* 偶数行の背景色 */
+}
+
+.portfolio tr:nth-child(odd) {
+    background-color: #1c305c; /* 奇数行の背景色 */
+}
+
+table th select, table th input {
+    width: 90%;              /* 入力欄の幅 */
+    padding: 5px;            /* 内側の余白 */
+    margin-top: 5px;         /* 上部の余白 */
+    border: 1px solid #ccc;  /* 枠線 */
+    border-radius: 5px;      /* 角を丸くする */
+    font-size: 0.9em;        /* フォントサイズ */
+}
+
+th, td {
+    width: auto;        /* デフォルトは自動調整 */
+}
+
+.col-video {
+    width: 15%;         /* 特定の列は固定幅 */
+}

@@ -1,0 +1,75 @@
+/* 共通のCSS */
+@font-face {
+    font-family: 'GenEiLatemin';
+    src: url('./fonts/GenEiLateMinP_v2.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'SourceHanSansJ';
+    src: url('./fonts/SourceHanSans-Light.otf') format('opentype');
+}
+
+body {
+    background-color:#1c305c;     /* 背景色 */
+    margin: 0;                      /* 余白をなくす */
+    text-align: center;             /* 中央揃え */
+}
+
+h1 {
+    font-size: 3.5em;                 /* フォントサイズ */
+    font-weight: normal; /* 太字を解除 */
+    color: #ffffff;               /* 文字色 */
+    padding-top: 3%;                /* 上部の余白 */
+    font-family: 'GenEiLatemin', sans-serif;    /* フォント */
+    border: 2px solid #DC00D5; /* 枠線の色、太さ、種類を指定 */
+    padding: 10px 70px;            /* 枠線と文字の間に余白を入れる */
+    display: inline-block;    /* 枠線を文字のサイズに合わせる */
+    background-color: #DC00D5; /* 背景色 */
+}
+
+nav {
+    width: 80%;               /* 横幅を80%に調整 */
+    margin: 0 auto;           /* 中央揃え */
+    text-align: center;
+    background-color: #DC00D5; /* 背景色 */
+    padding: 10px;          /* 上下の余白 */
+}
+
+nav a {
+    color: #ffffff;           /* リンクの文字色 */
+    text-decoration: none;    /* 下線を消す */
+    margin: 0 15px;           /* リンク同士の間隔 */
+    font-size: 2em;         /* フォントサイズ */
+    font-family: 'GenEiLatemin', sans-serif;    /* フォント */
+}
+
+nav a:hover {
+    text-decoration: underline; /* ホバー時に下線を表示 */
+}
+
+footer {
+    width: 80%;               /* 横幅を80%に調整 */
+    margin: 0 auto;           /* 中央揃え */
+    background-color: #1c305c;  /* フッターの背景色 */
+    color: #ffffff;            /* 文字色 */
+    text-align: center;        /* 中央揃え */
+    padding: 20px 0;           /* 上下の余白 */
+    border-top: 3px solid #DC00D5; /* 上にピンクのライン */
+    background-color: #DC00D5; /* 背景色 */
+    margin-bottom: 3%;       /* 下の余白 */
+}
+
+footer .social-links {
+    display: flex;             /* 横並びにする */
+    justify-content: center;   /* 中央揃え */
+    gap: 10%;                 /* 各アイコンの間隔 */
+    margin-bottom: 10px;       /* 下の余白 */
+}
+
+footer .social-links img {
+    width: auto;               /* アイコンサイズ */
+    height: 40px;              /* 縦横比を維持 */
+    object-fit: contain;       /* アイコン全体が枠内に収まる */
+    margin: 0;            /* 画像の左右の余白（上下余白は0なのでなし） */
+    background-color: #DC00D5; /* 背景色 */
+}
