@@ -9,6 +9,10 @@
     src: url('./fonts/SourceHanSans-Light.otf') format('opentype');
 }
 
+head {
+    text-align: center;             /* 中央揃え */
+}
+
 body {
     background-color:#1c305c;     /* 背景色 */
     margin: 0;                      /* 余白をなくす */
@@ -119,5 +123,17 @@ footer .social-links img {
 
     .navinavi .mobile-break {
         display: block; /* スマホでは改行する */
+    }
+
+    h1 {
+        font-size: 2.5em;                 /* フォントサイズ */
+        font-weight: normal; /* 太字を解除 */
+        color: #ffffff;               /* 文字色 */
+        padding-top: 3%;                /* 上部の余白 */
+        font-family: 'GenEiLatemin', sans-serif;    /* フォント */
+        border: 2px solid #DC00D5; /* 枠線の色、太さ、種類を指定 */
+        padding: 10px 70px;            /* 枠線と文字の間に余白を入れる */
+        display: block;    /* 枠線を文字のサイズに合わせる */
+        background-color: #DC00D5; /* 背景色 */
     }
 }
