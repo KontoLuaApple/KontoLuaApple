@@ -19,3 +19,19 @@ h2 {
     width: 80%;              /* 入力欄の幅 */
     margin: 0 auto; /* 左右の余白を自動設定して中央揃え */
 }
+
+@media (max-width: 768px) {
+    .guide{
+        width: 100%;              /* 入力欄の幅 */
+        margin: 0 auto; /* 左右の余白を自動設定して中央揃え */
+    }
+
+    h3 {
+        font-size: 1.2em;                 /* フォントサイズ */
+        color: #ffffff;               /* 文字色 */
+        padding-top: 2%;                /* 上部の余白 */
+        padding: 10px 70px;            /* 枠線と文字の間に余白を入れる */
+        text-align: left;             /* 中央揃え */
+        font-weight: normal; /* 太字を解除 */
+    }
+}

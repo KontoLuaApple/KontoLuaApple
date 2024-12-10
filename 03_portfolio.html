@@ -5,14 +5,18 @@
         <link rel="stylesheet" href="./00_uni.css"> <!-- CSSファイルの読み込み -->
         <link rel="stylesheet" href="./03_portfolio.css"> <!-- CSSファイルの読み込み -->
 
-        <h1>紺留留亜のなんでも屋さん</h1>   <!-- 大見出し -->
-        <nav>
+        <h1 class="title">紺留留亜の<span class="mobile-break">なんでも屋さん</span></h1>   <!-- 大見出し -->
+        <nav class="navinavi">
             <a href="./index.html">トップ</a>
             <a href="./02_profile.html">プロフィール</a>
             <a href="./03_portfolio.html">ポートフォリオ</a>
+            <span class="mobile-break">
             <a href="./04_guide.html">楽曲使用ガイドライン</a>
             <a href="./05_contact.html">お問い合わせ</a>
+            </span>
         </nav>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 
     <body>
@@ -132,16 +136,16 @@
     <footer>
         <div class="social-links">
             <a href="https://www.youtube.com/@KontoLuaApple/featured" target="_blank">
-                <img src="./img/01_YouTube.png" alt="YouTube" />
+                <img src="./img/01_YouTube.png" alt="YouTube" class="logo_YouTube" />
             </a>
             <a href="https://x.com/KontoLuaApple" target="_blank">
-                <img src="./img/01_Twitter.png" alt="X (Twitter)" />
+                <img src="./img/01_Twitter.png" alt="X (Twitter)" class="logo_Twitter" />
             </a>
             <a href="https://kontoluaapple.booth.pm/" target="_blank">
-                <img src="./img/01_BOOTH.svg" alt="BOOTH" />
+                <img src="./img/01_BOOTH.svg" alt="BOOTH" class="logo_BOOTH" />
             </a>
             <a href="https://store.vket.com/ja/shops/3250" target="_blank">
-                <img src="./img/01_VketStore.svg" alt="VketStore" />
+                <img src="./img/01_VketStore.svg" alt="VketStore" class="logo_VketStore" />
             </a>
         </div>
     </footer>

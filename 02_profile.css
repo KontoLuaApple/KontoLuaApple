@@ -33,3 +33,29 @@ h3 {
     line-height: 1.6;           /* 行間を広くする */
     text-align: left;             /* 左揃え */
 }
+
+@media (max-width: 768px) {
+    .profile {
+        flex-direction: column;  /* 縦並びにする */
+        justify-content: center;    /* 中央揃え */
+        align-items: center;        /* 縦方向を揃える */
+        margin: 2% 1%;                  /* 画像の左右の余白（上下余白は0なのでなし） */
+    }
+
+    .profile-image img {
+        width: 100%;               /* 画像の幅を固定 */
+        max-width: 100%;       /* 幅を全体に */
+        height: auto;               /* 縦横比を維持 */
+        clip-path: inset(0 25% 0 25%); /* 上, 右, 下, 左をカット */
+        margin: 0 auto; /* 中央揃え */
+    }
+
+    .profile-text {
+        max-width: 100%;       /* 幅を全体に */
+        color: #ffffff;             /* テキストの色 */
+        font-size: 1.2em;           /* テキストのサイズ */
+        line-height: 1.6;           /* 行間を広くする */
+        text-align: left;             /* 左揃え */
+        margin: 0 auto; /* 中央揃え */
+    }
+}

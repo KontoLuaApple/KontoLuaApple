@@ -52,7 +52,6 @@ img {
 
 .top {
     display: flex;              /* 横並びにする */
-    justify-content: space-between; /* 左右に間隔を均等配置 */
     justify-content: center;    /* 中央揃え */
     align-items: flex-start; /* 上揃えに配置 */
     margin: 2% 10%;                  /* 画像の左右の余白（上下余白は0なのでなし） */
@@ -69,4 +68,25 @@ img {
 .top-news {
     flex: 1; /* 右カラムの幅（割合） */
     max-width: 50%; /* 最大幅を50%に制限 */
+}
+
+@media (max-width: 768px) {
+    .top {
+        flex-direction: column;  /* 縦並びにする */
+        justify-content: center;   /* 水平方向に中央揃え */
+        align-items: center;       /* 垂直方向に中央揃え */
+        margin: 2% 5%;                  /* 画像の左右の余白（上下余白は0なのでなし） */
+    }
+
+    .top-news {
+        width: 100%;       /* 幅を全体に */
+        max-width: none;   /* 最大幅の制限を解除 */
+        justify-content: center;    /* 中央揃え */
+        margin: 0 auto; /* 中央揃え */
+    }
+
+    img {
+        width: 80%; /* カラム幅に合わせて画像を拡大 */
+        height: auto; /* 縦横比を保つ */
+    }
 }

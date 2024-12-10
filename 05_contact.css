@@ -27,3 +27,27 @@ h2 {
     width: 48%;               /* 左右を半々にする */
     padding-top: 2%;                /* 上部の余白 */
 }
+
+@media (max-width: 768px) {
+    .contact {
+        flex-direction: column;  /* 縦並びにする */
+        justify-content: space-between; /* 要素間を均等に配置 */
+        width: 100%;               /* セクション全体の幅を指定 */
+        margin: 0 auto;           /* 真ん中に配置 */
+        gap: 20px;                /* 要素間の余白 */
+    }
+
+    .contact-text, .contact-form {
+        width: 100%;               /* 左右を半々にする */
+        padding-top: 2%;                /* 上部の余白 */
+    }
+
+    h3 {
+        font-size: 1.2em;                 /* フォントサイズ */
+        color: #ffffff;               /* 文字色 */
+        padding-top: 2%;                /* 上部の余白 */
+        padding: 10px 70px;            /* 枠線と文字の間に余白を入れる */
+        text-align: left;             /* 中央揃え */
+        font-weight: normal; /* 太字を解除 */
+    }
+}
