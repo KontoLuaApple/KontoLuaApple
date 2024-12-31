@@ -11,6 +11,7 @@ img {
     width: 80%;               /* セクションの幅 */
     border-radius: 10px;      /* 角を丸くする */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* 影をつけて立体感を出す */
+    font-family: 'SourceHanSansJ', sans-serif;    /* フォント */
 }
 
 #news h2 {

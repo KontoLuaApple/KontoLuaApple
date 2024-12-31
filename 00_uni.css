@@ -58,8 +58,6 @@ footer {
     color: #ffffff;            /* 文字色 */
     text-align: center;        /* 中央揃え */
     padding: 20px 0;           /* 上下の余白 */
-    border-top: 3px solid #DC00D5; /* 上にピンクのライン */
-    background-color: #DC00D5; /* 背景色 */
     margin-bottom: 3%;       /* 下の余白 */
 }
 
@@ -75,16 +73,9 @@ footer .social-links img {
     height: 40px;              /* 縦横比を維持 */
     object-fit: contain;       /* アイコン全体が枠内に収まる */
     margin: 0;            /* 画像の左右の余白（上下余白は0なのでなし） */
-    background-color: #DC00D5; /* 背景色 */
 }
 
 @media (max-width: 768px) {
-    .logo_YouTube {
-        content: url('./img/01_YouTube_icon.png'); /* アイコン画像に切り替え */
-        width: 32px; /* アイコンのサイズを調整 */
-        height: 32px;
-    }
-
     .logo_BOOTH {
         content: url('./img/01_BOOTH_icon.svg'); /* アイコン画像に切り替え */
         width: 32px; /* アイコンのサイズを調整 */
@@ -104,8 +95,6 @@ footer .social-links img {
         color: #ffffff;            /* 文字色 */
         text-align: center;        /* 中央揃え */
         padding: 20px 0;           /* 上下の余白 */
-        border-top: 3px solid #DC00D5; /* 上にピンクのライン */
-        background-color: #DC00D5; /* 背景色 */
         margin-bottom: 3%;       /* 下の余白 */
     }
 
@@ -113,7 +102,6 @@ footer .social-links img {
         width: 100%;               /* 横幅を80%に調整 */
         margin: 0 auto;           /* 中央揃え */
         text-align: center;
-        background-color: #DC00D5; /* 背景色 */
         padding: 10px;          /* 上下の余白 */
     }
 

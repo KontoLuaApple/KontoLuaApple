@@ -1,37 +1,31 @@
-h3 {
-    font-size: 1em;                 /* フォントサイズ */
-    color: #ffffff;               /* 文字色 */
-    padding-top: 2%;                /* 上部の余白 */
-    padding: 10px 70px;            /* 枠線と文字の間に余白を入れる */
-    text-align: left;             /* 中央揃え */
-    font-weight: normal; /* 太字を解除 */
-}
-
 h2 {
     font-size: 2em;                 /* フォントサイズ */
     color: #ffffff;               /* 文字色 */
     padding-top: 2%;                /* 上部の余白 */
     padding: 10px 70px;            /* 枠線と文字の間に余白を入れる */
     font-weight: normal; /* 太字を解除 */
+    text-align: center;             /* 中央揃え */
+    font-family: 'SourceHanSansJ', sans-serif;    /* フォント */
 }
 
 .guide{
-    width: 80%;              /* 入力欄の幅 */
-    margin: 0 auto; /* 左右の余白を自動設定して中央揃え */
+    padding: 5% 7%;            /* 枠線と文字の間に余白を入れる */
+    font-size: 1em;                 /* フォントサイズ */
+    color: #ffffff;               /* 文字色 */
+    padding-top: 2%;                /* 上部の余白 */
+    padding: 5% 10%;            /* 枠線と文字の間に余白を入れる */
+    text-align: left;             /* 中央揃え */
+    font-family: 'SourceHanSansJ', sans-serif;    /* フォント */
 }
 
 @media (max-width: 768px) {
     .guide{
-        width: 100%;              /* 入力欄の幅 */
-        margin: 0 auto; /* 左右の余白を自動設定して中央揃え */
-    }
-
-    h3 {
-        font-size: 1.2em;                 /* フォントサイズ */
-        color: #ffffff;               /* 文字色 */
-        padding-top: 2%;                /* 上部の余白 */
-        padding: 10px 70px;            /* 枠線と文字の間に余白を入れる */
-        text-align: left;             /* 中央揃え */
-        font-weight: normal; /* 太字を解除 */
+        max-width: 100%;       /* 幅を全体に */
+        color: #ffffff;             /* テキストの色 */
+        font-size: 1.2em;           /* テキストのサイズ */
+        line-height: 1.6;           /* 行間を広くする */
+        text-align: left;             /* 左揃え */
+        margin: 0 auto; /* 中央揃え */
+        font-family: 'SourceHanSansJ', sans-serif;    /* フォント */
     }
 }
