@@ -28,4 +28,14 @@ h2 {
         margin: 0 auto; /* 中央揃え */
         font-family: 'SourceHanSansJ', sans-serif;    /* フォント */
     }
+
+    h2 {
+        font-size: 1.3em;                 /* フォントサイズ */
+        color: #ffffff;               /* 文字色 */
+        padding-top: 2%;                /* 上部の余白 */
+        padding: 10px 10px;            /* 枠線と文字の間に余白を入れる */
+        font-weight: normal; /* 太字を解除 */
+        text-align: center;             /* 中央揃え */
+        font-family: 'SourceHanSansJ', sans-serif;    /* フォント */
+    }
 }
