@@ -45,7 +45,7 @@
     .profile-text {
         max-width: 100%;       /* 幅を全体に */
         color: #ffffff;             /* テキストの色 */
-        font-size: 1.2em;           /* テキストのサイズ */
+        font-size: 1em;           /* テキストのサイズ */
         line-height: 1.6;           /* 行間を広くする */
         text-align: left;             /* 左揃え */
         margin: 0 auto; /* 中央揃え */
