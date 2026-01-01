@@ -71,6 +71,57 @@ img {
     max-width: 50%; /* 最大幅を50%に制限 */
 }
 
+.top-streaming{
+  margin-top: 16px;
+  display: flex;
+  justify-content: center; /* 画像の下で中央配置 */
+
+  --bg: #0f172a;
+  --card: rgba(255,255,255,.06);
+  --border: rgba(255,255,255,.14);
+  --text: rgba(255,255,255,.92);
+  --muted: rgba(255,255,255,.72);
+  --accent: #7dd3fc;
+
+  color: var(--text);
+}
+
+.dist-btn{
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  padding: .9rem 1rem;
+  border-radius: 999px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  text-decoration: none;
+  color: var(--text);
+  transition: transform .08s ease, background .12s ease, border-color .12s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,.15);
+  justify-content: center;
+}
+
+.dist-btn:hover{
+  transform: translateY(-1px);
+  border-color: rgba(125,211,252,.45);
+  background: rgba(255,255,255,.09);
+  transform: scale(1.08);
+  box-shadow: 0 0 8px rgba(125,211,252,.35);
+}
+
+.dist-btn:active{
+  transform: translateY(0px);
+}
+
+.name{
+  line-height: 1.2;
+  font-size: 1.5rem;
+  font-family: 'GenEiLatemin', sans-serif;    /* フォント */
+}
+
+.pc-only { display: block; } /* PCのときのみ配信先リンク集を画像下に表示 */
+.sp-only { display: none; }  /* PCのときのみ配信先リンク集をお知らせの下は非表示 */
+
 @media (max-width: 768px) {
     .top {
         flex-direction: column;  /* 縦並びにする */
@@ -90,4 +141,11 @@ img {
         width: 80%; /* カラム幅に合わせて画像を拡大 */
         height: auto; /* 縦横比を保つ */
     }
+
+    .top-streaming{
+        width: 90%;
+    }
+
+    .pc-only { display: none; } /* スマホのときのみ配信先リンク集を画像下は非表示 */
+    .sp-only { display: block; text-align: center; margin-top: 12px; }  /* スマホのときのみ配信先リンク集をお知らせの下に表示 */
 }
