@@ -35,6 +35,20 @@
   }
 }
 
+.dist-title {
+  text-align: center;
+}
+
+.sp-break {
+  display: inline; /* PCでは1行 */
+}
+
+@media (max-width: 768px) {
+  .sp-break {
+    display: block; /* スマホだけ改行 */
+  }
+}
+
 .dist-grid{
   list-style: none;
   padding: 0;
