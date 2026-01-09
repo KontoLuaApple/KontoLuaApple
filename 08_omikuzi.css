@@ -1,0 +1,161 @@
+h2{
+  font-size: 2em;
+  font-weight: normal; /* 太字を解除 */
+  color: #ffffff;               /* 文字色 */
+  padding-top: 3%;                /* 上部の余白 */
+  font-family: 'GenEiLatemin', sans-serif;    /* フォント */
+  border: 2px solid #DC00D5; /* 枠線の色、太さ、種類を指定 */
+  padding: 10px 70px;            /* 枠線と文字の間に余白を入れる */
+  display: inline-block;    /* 枠線を文字のサイズに合わせる */
+  background-color: #DC00D5; /* 背景色 */
+}
+
+.sp-break {
+  display: inline; /* PCでは1行 */
+}
+
+#omikuji-app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* ← これが超重要 */
+  gap: 1rem;
+}
+
+#omikuji-setsumei {
+  color: #ffffff;   /* 文字色 */
+  font-family: 'SourceHanSansJ', sans-serif;    /* フォント */
+  font-size: 1rem; /* サイズ */
+  width: 80%; /* 文章の幅を固定 */
+}
+
+#omikuji-result {
+  color: #ffffff;   /* 文字色 */
+  font-family: 'SourceHanSansJ', sans-serif;    /* フォント */
+  font-size: 1.2rem;
+}
+
+#luaneko{
+  width: 480px;
+  height: auto;
+  transform: translateX(30px);
+}
+
+.dist-btn{
+  --bg: #0f172a;
+  --card: rgba(255,255,255,.06);
+  --border: rgba(255,255,255,.14);
+  --text: rgba(255,255,255,.92);
+  --muted: rgba(255,255,255,.72);
+  --accent: #7dd3fc;
+
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  padding: .9rem 1rem;
+  border-radius: 999px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  text-decoration: none;
+  color: var(--text);
+  transition: transform .08s ease, background .12s ease, border-color .12s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,.15);
+  font-family: 'GenEiLatemin', sans-serif;    /* フォント */
+  font-size: 1.5em;
+}
+
+.dist-btn:not(:disabled):hover{
+  transform: translateY(-1px);
+  border-color: rgba(125,211,252,.45);
+  background: rgba(255,255,255,.09);
+  transform: scale(1.05);
+  box-shadow: 0 0 8px rgba(125,211,252,.35);
+}
+
+.dist-btn:active{
+  transform: translateY(0px);
+}
+
+.dist-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+#countdown{
+  font-size: 2em;   /* 少し大きく */
+  font-weight: bold; /* 太字 */
+  text-shadow:
+  0 0 6px rgba(125,211,252,.45),
+  0 0 12px rgba(125,211,252,.35);
+  font-family: 'GenEiLatemin', sans-serif;    /* フォント */
+}
+
+/* ラッキーアイテムの“おみくじ紙” */
+#result-text.omikuji-paper{
+  display: grid;
+  gap: 0.8rem;
+
+  writing-mode: vertical-rl;     /* 縦書き（右→左に列が並ぶ） */
+  text-orientation: upright;     /* 文字を正立させる */
+
+  padding: 1.2rem 1rem;
+  background: #ffffff;
+  color:black;
+  font-family:
+    "Yu Mincho",
+    "Hiragino Mincho ProN",
+    "Noto Serif JP",
+    serif;
+  letter-spacing: 0.08em;
+  position: relative;
+  flex-direction: row;
+
+  justify-content: space-between; /* ← 上下に分配 */
+  align-items: center;            /* ← 横は中央 */
+  min-height: 280px;              /* ← 高さを確保（重要） */
+}
+
+/* ラベル（小さめ） */
+#result-text.omikuji-paper .omikuji-label{
+  font-size: 0.95em;
+  opacity: 0.9;
+  display: block;
+  width: 1.5em;   /* 縦書き1列ぶん */
+  text-align: left;
+}
+
+#result-text.omikuji-paper .omikuji-tail{ 
+  font-size: 0.95em;
+  opacity: 0.9;
+  display: block;
+  width: 1.5em;   /* 縦書き1列ぶん */
+  text-align: right;
+}
+
+/* メインのアイテム（でかく） */
+#result-text.omikuji-paper .omikuji-item{
+  font-size: 1.35em;
+  font-weight: 700;
+}
+
+/* おみくじっぽい“紙の縁” */
+#result-text.omikuji-paper::before{
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border: 3px solid #c62828;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  h2 {
+    display: block;    /* 枠線を文字のサイズに合わせる */
+  }
+
+  .sp-break {
+    display: block; /* スマホだけ改行 */
+  }
+}

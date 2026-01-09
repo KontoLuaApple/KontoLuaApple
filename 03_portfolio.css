@@ -47,3 +47,67 @@ th, td {
 .col-video {
     width: 15%;         /* 特定の列は固定幅 */
 }
+
+@media (max-width: 768px){
+  .portfolio thead{ display: none; }
+
+  .portfolio table,
+  .portfolio tbody,
+  .portfolio tr{
+    display: block;
+  }
+
+  .portfolio tbody tr{
+    margin: 0 auto 12px;
+    padding: 14px 16px;
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 12px;
+    background: rgba(255,255,255,.04);
+  }
+
+  .portfolio td{
+    display: flex;
+    gap: 10px;
+    padding: 8px 0;
+    border: 0;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .portfolio td::before{
+    content: attr(data-label);
+    flex: 0 0 5.5em;
+    opacity: 10;
+    font-weight: 800;
+  }
+
+  .portfolio td[data-label="関連動画など"]::before{
+    content: "関連動画\Aなど";
+    white-space: pre;
+  }
+  .portfolio td iframe{
+    width: 70%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    display: block;
+    border: 0;
+  }
+
+  .portfolio .video-list{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;        /* 動画同士の間隔 */
+  }
+
+  .portfolio .video-list iframe{
+    width: 100%;
+  }
+
+  .portfolio td[data-label="関連動画など"] iframe[src*="twitter.com"],
+  .portfolio td[data-label="関連動画など"] iframe[src*="x.com"]{
+    transform: scale(0.9);
+    transform-origin: left top;
+  }
+}
+
+

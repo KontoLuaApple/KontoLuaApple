@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+    <head> <!-- ページのヘッダー情報(ページ上に表示されない) -->
+        <title>おみくじ出るまで待てにゃい</title> <!-- サイトのタイトル -->
+        <link rel="stylesheet" href="./00_uni.css"> <!-- CSSファイルの読み込み -->
+        <link rel="stylesheet" href="./08_omikuzi.css"> <!-- CSSファイルの読み込み -->
+
+        <h1 class="title">紺留留亜の<span class="mobile-break">なんでも屋さん</span></h1>   <!-- 大見出し -->
+        <nav class="navinavi">
+            <a href="./index.html">トップ</a>
+            <span class="mobile-break"></span>
+            <a href="./02_profile.html">プロフィール</a>
+            <span class="mobile-break"></span>
+            <a href="./03_portfolio.html">ポートフォリオ</a>
+            <span class="mobile-break"></span>
+            <a href="./04_guide.html">ガイドライン</a>
+            <span class="mobile-break"></span>
+            <a href="./05_contact.html">お問い合わせ</a>
+        </nav>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="google-site-verification" content="dhAwAbCfzvwevqwhtZUvxW_lGTMpSWqPo5p9D3sU1yk" />
+
+        <link rel="canonical" href="https://kontoluaapple.github.io/KontoLuaApple/">
+    </head>
+
+    <body>
+        <h2 id="dist-title">おみくじ<span class="sp-break">出るまで</span><span class="sp-break">待てにゃい</span></h2>
+        <div id="omikuji-app">
+            <!-- おみくじ出るまで待てにゃい -->
+            <p id="omikuji-setsumei">おみくじを頼むとるあねこがラッキーアイテムおみくじを引きに行ってくれます。<br>
+                ただし、るあねこは気まぐれなので、おみくじを持ってくるまでの時間は1秒～60秒の間でランダムです。<br>
+                待たされる間にタスクを1 mmでも進めよう！　という代物です。
+            </p>
+            <div id="omikuji-result" hidden>
+                <span id="result-text" style="display:none;">
+                    <span class="omikuji-label">ラッキーアイテムは</span>
+                    <span class="omikuji-item">ねこモチーフグッズ</span>
+                    <span class="omikuji-tail">だにゃ！</span>
+                </span>
+                <span id="waiting-text" style="display:none;">
+                    るあねこがおみくじを<span class="sp-break">取りに行っています……</span><br>
+                    <span id="countdown">3</span>
+                </span>
+            </div>
+
+            <div id="waiting-area" style="display:none;">
+                <img id="luaneko" src="./img/07_Omikuzi_Luaneko.gif" alt="歩くるあねこ">
+            </div>
+
+            <button id="omikuji-button" class="dist-btn">おみくじ持ってきて！</button>
+        </div>
+    </body>
+
+    <script>
+        const btn = document.getElementById("omikuji-button");
+        const result = document.getElementById("omikuji-result");
+        const resultText = document.getElementById("result-text");
+        const waitingText = document.getElementById("waiting-text");
+        const countdown = document.getElementById("countdown");
+        const waitingArea = document.getElementById("waiting-area");
+
+        const luckyItems = [ //ラッキーアイテムリスト
+            "ねこモチーフグッズ" , // 1個目
+            "ねこじゃらし" , // 2個目
+            "ねこっぽいお菓子" , // 3個目
+            "タオルケット" , // 4個目
+            "ヒーター or 扇風機" , // 5個目
+            "毛糸玉" , // 6個目
+            "マグカップ" , // 7個目
+            "ぬいぐるみ" , // 8個目
+            "ねこ柄の布" , // 9個目
+            "シャーペン" , // 10個目
+            "下敷き" , // 11個目
+            "クリアファイル" , // 12個目
+            "ティッシュ" , // 13個目
+            "タオル" , // 14個目
+            "ヘッドホン" , // 15個目
+            "イヤホン" , // 16個目
+            "音が出るもの" , // 17個目
+            "ウェットティッシュ" , // 18個目
+            "ライト" , // 19個目
+            "ポーチ" , // 20個目
+            "リップクリーム" , // 21個目
+            "日焼け止め" , // 22個目
+            "時計" , // 23個目
+            "充電器" , // 24個目
+            "マスク" , // 25個目
+            "コースター" , // 26個目
+            "カード" , // 27個目
+            "ビニール袋" , // 28個目
+            "鉛筆" , // 29個目
+            "ボールペン" , // 30個目
+            "消しゴム" , // 31個目
+            "キーホルダー" , // 32個目
+            "サインペン" , // 33個目
+            "クッション" , // 34個目
+            "はし" , // 35個目
+            "スプーン" , // 36個目
+            "フォーク" , // 37個目
+            "ハンカチ" , // 38個目
+            "靴下" , // 39個目
+            "トートバッグ" , // 40個目
+            "ガム" , // 41個目
+            "クッキー" , // 42個目
+            "チョコレート" , // 43個目
+            "飴" , // 44個目
+            "はさみ" , // 45個目
+            "定規" , // 46個目
+            "ねこの形のもの" , // 47個目
+            "折り紙" , // 48個目
+            "メモ帳" , // 49個目
+            "指輪" , // 50個目
+            "はんこ" , // 51個目
+            "ゲーム機" , // 52個目
+            "エコバッグ" , // 53個目
+            "ねこがかいてあるもの" , // 54個目
+            "シャンプー" , // 55個目
+            "石鹸・ボディソープ" , // 56個目
+            "ペットボトル" , // 57個目
+            "ストラップ" , // 58個目
+            "缶バッジ" , // 59個目
+            "お守り" , // 60個目
+            "歯磨き粉" , // 61個目
+            "歯ブラシ" , // 62個目
+            "耳かき" , // 63個目
+            "セロテープ" , // 64個目
+            "クリップ" , // 65個目
+            "のり" , // 66個目
+            "ホッチキス" , // 67個目
+            "蛍光ペン" , // 68個目
+            "緑茶" , // 69個目
+            "紅茶" , // 70個目
+            "コーヒー" , // 71個目
+            "ルイボスティー" , // 72個目
+            "ハーブティー" , // 73個目
+            "インスタントスープ" , // 74個目
+            "枕" , // 75個目
+            "制汗シート" , // 76個目
+            "スマホ" , // 77個目
+            "紙袋" , // 78個目
+            "段ボール" , // 79個目
+            "シール" , // 80個目
+            "カレンダー" , // 81個目
+            "バインダー" , // 82個目
+            "アクリルスタンド" , // 83個目
+            "消臭スプレー" , // 84個目
+            "小説" , // 85個目
+            "漫画" , // 86個目
+            "雑誌" , // 87個目
+            "絵" , // 88個目
+            "ノート" , // 89個目
+            "フィギュア" , // 90個目
+            "ハンガー" , // 91個目
+            "チラシ・フライヤー" , // 92個目
+            "名刺" , // 93個目
+            "写真" , // 94個目
+            "封筒" , // 95個目
+            "ポット" , // 96個目
+            "傘" , // 97個目
+            "ジュース" , // 98個目
+            "ココア" , // 99個目
+            "炭酸飲料" , // 100個目
+        ];
+
+        btn.addEventListener("click", function () {
+            let remaining = Math.floor(Math.random() * 1) + 1;  // 残り秒数
+            const index = Math.floor(Math.random() * luckyItems.length);
+            const item = luckyItems[index];
+            
+            // 初期文を隠して、待ち文を出す
+            resultText.style.display = "none";
+            waitingText.style.display = "inline";
+            countdown.textContent = remaining;
+            waitingArea.style.display = "block";
+            const omikujiResult = document.getElementById("omikuji-result");
+            omikujiResult.hidden = false;
+
+            btn.disabled = true;
+
+            const timer = setInterval(function(){
+                
+                remaining--;
+
+                if(remaining > 0){
+                    countdown.textContent = remaining;
+                } else {
+                    clearInterval(timer);
+
+                    // 待ち文を隠して、結果文に戻す
+                    waitingText.style.display = "none";
+                    resultText.style.display = "inline";
+                    waitingArea.style.display = "none";
+                    resultText.classList.add("omikuji-paper");
+                    document.querySelector("#result-text .omikuji-item").textContent = item;
+
+                    btn.disabled = false;
+                }
+            },1000);
+        });
+    </script>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://www.youtube.com/@KontoLuaApple/featured" target="_blank">
+                <img src="./img/01_YouTube.png" alt="YouTube" class="logo_YouTube" />
+            </a>
+            <a href="https://www.nicovideo.jp/user/141430039" target="_blank">
+                <img src="./img/01_niconico.png" alt="niconico" class="logo_niconico" />
+            </a>
+            <a href="https://x.com/KontoLuaApple" target="_blank">
+                <img src="./img/01_Twitter.png" alt="X (Twitter)" class="logo_Twitter" />
+            </a>
+            <a href="https://kontoluaapple.booth.pm/" target="_blank">
+                <img src="./img/01_BOOTH.svg" alt="BOOTH" class="logo_BOOTH" />
+            </a>
+        </div>
+        <p>© 2025 紺留留亜 / Konto Lua. All rights reserved.</p>
+    </footer>
+</html>

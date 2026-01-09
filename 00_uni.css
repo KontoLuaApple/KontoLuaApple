@@ -11,12 +11,14 @@
 
 head {
     text-align: center;             /* 中央揃え */
+    overflow-x: hidden;
 }
 
 body {
     background-color:#1c305c;     /* 背景色 */
     margin: 0;                      /* 余白をなくす */
     text-align: center;             /* 中央揃え */
+    overflow-x: hidden;
 }
 
 h1 {
