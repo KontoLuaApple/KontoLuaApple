@@ -32,6 +32,8 @@ h2{
   color: #ffffff;   /* 文字色 */
   font-family: 'SourceHanSansJ', sans-serif;    /* フォント */
   font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
 }
 
 #luaneko{
@@ -92,9 +94,6 @@ h2{
 
 /* ラッキーアイテムの“おみくじ紙” */
 #result-text.omikuji-paper{
-  margin: 0 auto;
-  
-  display: grid;
   gap: 0.8rem;
 
   writing-mode: vertical-rl;     /* 縦書き（右→左に列が並ぶ） */
@@ -115,6 +114,10 @@ h2{
   justify-content: space-between; /* ← 上下に分配 */
   align-items: center;            /* ← 横は中央 */
   min-height: 280px;              /* ← 高さを確保（重要） */
+
+  display: flex;          /* inline-flex をやめる */
+  width: fit-content;     /* 中身の幅に合わせる */
+  margin: 0 auto;         /* これで確実に中央 */
 }
 
 /* ラベル（小さめ） */
