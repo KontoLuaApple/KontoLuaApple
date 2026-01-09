@@ -10,10 +10,16 @@ h2{
   background-color: #DC00D5; /* 背景色 */
 }
 
+h3{
+  font-size: 1.1em;
+  font-weight: normal; /* 太字を解除 */
+  font-family: 'GenEiLatemin', sans-serif;    /* フォント */
+}
+
 .convinient-link{
+  width: 80%; /* 幅を80%に */
+  margin: 0 auto; /* ページの中央に揃える */
   margin-top: 16px;
-  display: flex;
-  justify-content: center; /* 画像の下で中央配置 */
 
   --bg: #0f172a;
   --card: rgba(255,255,255,.06);
@@ -23,6 +29,14 @@ h2{
   --accent: #7dd3fc;
 
   color: var(--text);
+}
+
+.sub-title{
+  text-align: left;
+}
+
+.setsumei{
+  text-align: center;
 }
 
 .dist-btn{
@@ -38,6 +52,8 @@ h2{
   transition: transform .08s ease, background .12s ease, border-color .12s ease;
   box-shadow: 0 4px 12px rgba(0,0,0,.15);
   justify-content: center;
+  max-width: 360px;
+  margin: 0 auto;
 }
 
 .dist-btn:hover{

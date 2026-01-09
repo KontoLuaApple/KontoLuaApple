@@ -99,6 +99,7 @@ img {
   transition: transform .08s ease, background .12s ease, border-color .12s ease;
   box-shadow: 0 4px 12px rgba(0,0,0,.15);
   justify-content: center;
+  margin-bottom: 18px;
 }
 
 .dist-btn:hover{
