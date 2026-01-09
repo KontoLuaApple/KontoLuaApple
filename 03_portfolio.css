@@ -103,10 +103,15 @@ th, td {
     width: 100%;
   }
 
-  .portfolio td[data-label="関連動画など"] iframe[src*="twitter.com"],
-  .portfolio td[data-label="関連動画など"] iframe[src*="x.com"]{
+  .tweet-wrap{
     transform: scale(0.9);
     transform-origin: left top;
+  }
+
+  /* 念のため、生成される中身も幅を押さえる */
+  .tweet-wrap iframe,
+  .tweet-wrap blockquote{
+    max-width: 100% !important;
   }
 }
 

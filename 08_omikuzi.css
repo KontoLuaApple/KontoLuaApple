@@ -92,6 +92,8 @@ h2{
 
 /* ラッキーアイテムの“おみくじ紙” */
 #result-text.omikuji-paper{
+  margin: 0 auto;
+  
   display: grid;
   gap: 0.8rem;
 
