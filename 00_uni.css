@@ -11,14 +11,12 @@
 
 head {
     text-align: center;             /* 中央揃え */
-    overflow-x: hidden;
 }
 
 body {
     background-color:#1c305c;     /* 背景色 */
     margin: 0;                      /* 余白をなくす */
     text-align: center;             /* 中央揃え */
-    overflow-x: hidden;
 }
 
 h1 {
@@ -35,6 +33,7 @@ h1 {
 
 nav {
     width: 80%;               /* 横幅を80%に調整 */
+    max-width: 100%;
     margin: 0 auto;           /* 中央揃え */
     text-align: center;
     background-color: #DC00D5; /* 背景色 */
@@ -102,9 +101,12 @@ footer .social-links img {
 
     nav {
         width: 100%;               /* 横幅を80%に調整 */
+        max-width: 100%;
         margin: 0 auto;           /* 中央揃え */
         text-align: center;
         padding: 10px;          /* 上下の余白 */
+        padding-left: 0;
+        padding-right: 0;
     }
 
     .title .mobile-break {
