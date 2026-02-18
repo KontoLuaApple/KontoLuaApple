@@ -48,8 +48,25 @@ th, td {
     width: 15%;         /* 特定の列は固定幅 */
 }
 
+.sp-tools{
+  display: none; /* スマホ用の検索バーをPCでは非表示 */
+}
+
+.sp-tools input{
+  padding: 10px 12px;
+  font-size: 16px;
+  border-radius: 12px;
+  box-sizing: border-box;
+  margin: 24px auto 3px;
+}
+
 @media (max-width: 768px){
   .portfolio thead{ display: none; }
+
+  .portfolio {
+    flex-direction: column;
+    align-items: center;
+  }
 
   .portfolio table,
   .portfolio tbody,
@@ -112,6 +129,10 @@ th, td {
   .tweet-wrap iframe,
   .tweet-wrap blockquote{
     max-width: 100% !important;
+  }
+
+  .sp-tools{
+    display: block; /* スマホ用の検索バーをスマホでは表示 */
   }
 }
 

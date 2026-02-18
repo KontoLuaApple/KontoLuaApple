@@ -25,6 +25,9 @@
 
     <body>
         <div class="portfolio">
+            <div class="sp-tools">
+                <input type="text" id="spFilterWord" placeholder="フリーワード検索"> <!-- スマホ用の検索バー -->
+            </div>
             <table>
                 <thead>
                     <tr>
@@ -341,9 +344,8 @@
 </html>
 
 <script>
-    document.querySelectorAll('thead select, thead input').forEach((filterElement, index) => {
-        filterElement.addEventListener('input', function () {
-            const rows = document.querySelectorAll('tbody tr'); // テーブルのすべての行を取得
+    function applyFilter(){
+        const rows = document.querySelectorAll('tbody tr'); // テーブルのすべての行を取得
 
             rows.forEach(row => {
                 let shouldShow = true; // 行を表示するかどうか
@@ -363,17 +365,30 @@
                 }
 
                // 活動（テキスト検索）
-                const activityFilter = document.getElementById('filterActivity').value.toLowerCase();
-                const activityCell = row.querySelectorAll('td')[2];
-                if (activityFilter && activityCell && !activityCell.textContent.toLowerCase().includes(activityFilter)) {
+               const isSP = window.matchMedia("(max-width: 768px)").matches; //スマホかどうか判定
+               const pcWord = document.getElementById('filterActivity').value.toLowerCase(); //PCの検索語
+               const spWord = document.getElementById('spFilterWord').value.toLowerCase(); //スマホの検索語
+
+               const q = isSP ? spWord : pcWord; //幅によってどちらを検索語にするか決定
+
+               const targetText = isSP
+                ? row.textContent.toLowerCase() //スマホなら行全部から検索
+                : row.querySelectorAll('td')[2].textContent.toLowerCase(); //PCは活動列だけ検索
+
+                if (q && !targetText.includes(q)){
                     shouldShow = false;
                 }
 
                 // 行を表示または非表示
                 row.style.display = shouldShow ? '' : 'none';
             });
-        });
+    }
+
+    document.querySelectorAll('thead select, thead input').forEach((filterElement, index) => {
+        filterElement.addEventListener('input', applyFilter )
     });
+
+    document.getElementById('spFilterWord').addEventListener('input', applyFilter);
 
     document.addEventListener("DOMContentLoaded", () => {
         const table = document.querySelector(".portfolio table");
