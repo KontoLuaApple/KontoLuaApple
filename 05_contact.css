@@ -28,6 +28,58 @@ h2 {
     font-family: 'SourceHanSansJ', sans-serif;    /* フォント */
 }
 
+.contact-othersite{
+  margin-top: 16px;
+  display: flex;
+  justify-content: center; /* 画像の下で中央配置 */
+
+  --bg: #0f172a;
+  --card: rgba(255,255,255,.06);
+  --border: rgba(255,255,255,.14);
+  --text: rgba(255,255,255,.92);
+  --muted: rgba(255,255,255,.72);
+  --accent: #7dd3fc;
+
+  color: var(--text);
+}
+
+.dist-btn{
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  padding: .9rem 1rem;
+  border-radius: 999px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  text-decoration: none;
+  color: var(--text);
+  transition: transform .08s ease, background .12s ease, border-color .12s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,.15);
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.dist-btn:hover{
+  transform: translateY(-1px);
+  border-color: rgba(125,211,252,.45);
+  background: rgba(255,255,255,.09);
+  transform: scale(1.08);
+  box-shadow: 0 0 8px rgba(125,211,252,.35);
+}
+
+.dist-btn:active{
+  transform: translateY(0px);
+}
+
+.name{
+  line-height: 1.2;
+  font-size: 1.5rem;
+  font-family: 'GenEiLatemin', sans-serif;    /* フォント */
+}
+
+.pc-only { display: block; } /* PCのときのみコミッションサイトリンクを文章下に表示 */
+.sp-only { display: none; }  /* PCのときのみコミッションサイトリンクをフォームの下は非表示 */
+
 @media (max-width: 768px) {
     .contact {
         flex-direction: column;  /* 縦並びにする */
@@ -49,4 +101,12 @@ h2 {
     .contact-form{
         width: 100%;               /* 左右を半々にする */
     }
+
+    .contact-othersite{
+        width: 80%;               /* 左右を半々にする */
+        margin: 0 auto;
+    }
+
+    .pc-only { display: none; } /* スマホのときのみ配信先リンク集を文章下は非表示 */
+    .sp-only { display: block; text-align: center; margin-top: 12px; }  /* スマホのときのみ配信先リンク集をフォームの下に表示 */
 }
