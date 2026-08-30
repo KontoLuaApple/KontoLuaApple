@@ -26,7 +26,9 @@
     <body>
         <div class="profile">
             <div class="profile-image">
-             <img src="./img/02_profile.png" width="30%" alt="紺留留亜のプロフィール画像"> <!-- 画像の表示 -->
+                <img class="img-avatar" src="./img/02_profile.png" alt="紺留留亜のプロフィール画像"> <!-- 画像の表示 -->
+                <div class="burst"></div>
+                <p class = "switch-hint">クリックで実写に！</p>
             </div>
             <div class="profile-text">
                 TOBIRAPOLIS Gen. 1-Β。劇団「羽」。<br>
@@ -41,6 +43,57 @@
                 楽しいことにたくさん誘ってください！！！   <!-- 本文 -->
             </div>
         </div>
+            <script>
+                // 変数定義
+                let isAvatar = true;
+
+                // クリック時処理
+                document.querySelector('.profile-image').addEventListener('click', () => {
+                    // パーティクル処理
+                    for (let i = 0; i < 12; i++){
+                        const angle = (i / 12) * Math.PI * 2;
+                        const dist = 60;
+                        const size = 4 + Math.random() * 5;
+                        const colors = ['#1c305c', '#DC00D5', '#6C89C4', '#ffffff'];
+                        const color = colors[Math.floor(Math.random() * colors.length)];
+
+                        const spark = document.createElement('div');
+                        spark.style.position = 'absolute';
+                        spark.style.top = '32%';
+                        spark.style.left = '50%';
+                        spark.style.width = size +'px';
+                        spark.style.height = size + 'px';
+                        spark.style.background = color;
+                        spark.style.borderRadius = '50%';
+                        spark.style.transition = 'transform 0.6s ease, opacity 0.6s ease';
+                        document.querySelector('.burst').appendChild(spark);
+
+                        requestAnimationFrame( () => {
+                            spark.style.transform = `translate(${Math.cos(angle) * dist}px, ${Math.sin(angle) * dist}px)`;
+                            spark.style.opacity = '0';
+                        })
+
+                        // パーティクル削除
+                        setTimeout(() => {
+                            spark.remove();
+                        }, 600);
+                    }
+
+                    // 画像・文字切り替え処理
+                    const img = document.querySelector('.img-avatar');
+                    const hint = document.querySelector('.switch-hint');
+                    
+                    if (isAvatar) {
+                        img.src = './img/02_profile_real.png';
+                        hint.textContent = 'クリックでメタバースのすがたに！';
+                    } else {
+                        img.src = './img/02_profile.png';
+                        hint.textContent = 'クリックで実写に！';
+                    }
+
+                    isAvatar = !isAvatar;
+                });
+            </script>
     </body>
 
     <footer>

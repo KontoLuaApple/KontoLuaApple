@@ -6,13 +6,27 @@
     margin: 2% 10%;                  /* 画像の左右の余白（上下余白は0なのでなし） */
 }
 
+.profile-image {
+    position: relative;   /* ← これを追加。burstの基準地点になる */
+}
+
+.profile-image {
+    width: 300px;   /* ← これを追加、数値は仮 */
+}
+
 /* 画像部分 */
 .profile-image img {
-    margin: 2% 20%;                  /* 画像の左右の余白（上下余白は0なのでなし） */
-    background-color: #6C89C4; /* 背景色 */
     width: 100%;               /* 画像の幅を固定 */
     height: auto;               /* 縦横比を維持 */
-    clip-path: inset(0 25% 0 25%); /* 上, 右, 下, 左をカット */
+}
+
+.burst {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;   /* クリックとかを邪魔しないようにする */
 }
 
 /* テキスト部分 */
@@ -26,6 +40,11 @@
     font-family: 'SourceHanSansJ', sans-serif;    /* フォント */
 }
 
+.switch-hint {
+    color: #ffffff;
+    font-family: 'SourceHanSansJ', sans-serif;    /* フォント */
+}
+
 @media (max-width: 768px) {
     .profile {
         flex-direction: column;  /* 縦並びにする */
@@ -36,9 +55,7 @@
 
     .profile-image img {
         width: 100%;               /* 画像の幅を固定 */
-        max-width: 100%;       /* 幅を全体に */
         height: auto;               /* 縦横比を維持 */
-        clip-path: inset(0 25% 0 25%); /* 上, 右, 下, 左をカット */
         margin: 0 auto; /* 中央揃え */
     }
 
